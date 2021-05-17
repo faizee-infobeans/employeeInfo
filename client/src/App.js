@@ -9,7 +9,6 @@ function App() {
   return (
     <div className="App">
         <Router>
-          <Navbar></Navbar>
         <Switch>
            <Route exact path='/' component={Login}></Route>
            <Route exact path='/secret' component={Admin} ></Route>

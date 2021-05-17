@@ -1,10 +1,15 @@
 import { Link, withRouter } from 'react-router-dom'
 import logo from '../images/logo-infobeans-white.svg'
+import {Redirect} from 'react-router-dom'
 import './style/Navbar.css'
 import {CgMenuGridR} from 'react-icons/all';
 import { IconContext } from "react-icons";
 
 function Navbar(props) {
+  const LogOut = (e)=>{
+   localStorage.removeItem("token");
+   <Redirect to="/"/>
+  }
   return (
     <>
     <div class="header">
@@ -39,8 +44,8 @@ function Navbar(props) {
                   <li class="nav-item">
                     <a class="nav-link" href="#">Jobs</a>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Logout</a>
+                  <li class="nav-item" >
+                    <a class="nav-link" href="/" onClick={LogOut}>Logout</a>
                   </li>
                   <li class="nav-item text-white">
                     <IconContext.Provider value={{size:"2rem", className: "global-class-name" }}>

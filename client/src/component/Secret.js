@@ -7,6 +7,7 @@ import 'owl.carousel/dist/assets/owl.theme.default.min.css';
 import {FaRegComment,FiThumbsUp} from 'react-icons/all';
 import axios from 'axios';
 import './style/Card.css'
+import Navbar from './Navbar'
 
 const options = {
         nav: true,
@@ -59,11 +60,13 @@ class Admin extends Component{
         })
     }
     render(){
+        
      if(this.state.loggedIn === false){
 return <Redirect to="/"/>
      }
         return(
 <div>
+<Navbar></Navbar>   
 <div className="container">
     <br></br>
 <h4 className="heading mt-2 mb-2">Birthdays & Anniversaries of the Month</h4>

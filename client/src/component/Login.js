@@ -5,6 +5,8 @@ import logo1 from "../images/logo-infobeans-black.svg";
 import logo2 from "../images/logo-infobeans-white.svg";
 import { CgMenuGridR } from "react-icons/all";
 import { IconContext } from "react-icons";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function validateEmail(email) {
   const re =
@@ -29,19 +31,50 @@ export default class Login extends Component {
     this.submitForm = this.submitForm.bind(this);
   }
 
+  // login(e) {
+  //   let errors = {};
+  //   var email = document.getElementById("email");
+  //   if (!email.value) {
+  //     errors.email = "Email is Required";
+  //   } 
+  //   else if (!validateEmail(email.value)) {
+  //     errors.email = "Invalid Email Syntax";
+  //     email.style["border-color"] = "red";
+  //   }
+  //   this.setState({ errors: errors });
+  // }
+
   Change(event) {
     this.setState({
       [event.target.name]: event.target.value,
     });
   }
+
   submitForm(e) {
     e.preventDefault();
+    
+    
+    let errors = {};
+    var email = document.getElementById("email");
+    if (!email.value) {
+      errors.email = "Email is Required";
+    } 
+    else if (!validateEmail(email.value)) {
+      errors.email = "Invalid Email Syntax";
+      email.style["border-color"] = "red";
+    }
+    this.setState({ errors: errors });
     const { username, password } = this.state;
     if (username === "faizee@gmail.com" && password === "Admin") {
+      
+      alert("suce")
       localStorage.setItem("token", "userloggedin");
+      toast.success("login sucessfully");
       this.setState({
         loggedIn: true,
       });
+    } else {
+      toast.error("error in form");
     }
   }
   render() {
@@ -96,7 +129,9 @@ export default class Login extends Component {
                       value={this.state.username}
                       onChange={this.Change}
                     />
-
+                    <label style={{ color: "red" }} class="form-text">
+                      {this.state.errors && this.state.errors.email}
+                    </label>
                   </div>
                   <div class="d-flex justify-content-between">
                     <label for="password" class="form-label stretch">
@@ -117,7 +152,6 @@ export default class Login extends Component {
                       value={this.state.password}
                       onChange={this.Change}
                     />
-
                   </div>
                   <div class="mt-4 mb-5">
                     <button
