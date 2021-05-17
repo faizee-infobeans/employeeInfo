@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+
+    <div class="container">
+      <form action="/register" method="POST" enctype="multipart/form-data">
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Employee Image</label>
+          <input type="file" class="form-control" name="image" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Name</label>
+          <input type="text" class="form-control" name="name" placeholder="Faizee Bano">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Date of joining</label>
+          <input type="text" class="form-control" name="dateOfJoining" placeholder="3rd Feb">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Year of completion</label>
+          <input type="number" class="form-control" name="yearOfCompletion" placeholder="2">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Like</label>
+          <input type="number" class="form-control" name="like" placeholder="55">
+        </div>
+        <button type="submit" class="btn btn-danger">Submit</button>
+      </form>
+    </div>
+    
+  </body>
+</html>

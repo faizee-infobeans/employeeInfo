@@ -1,40 +1,59 @@
 import { Link, withRouter } from 'react-router-dom'
-import './style/Login.css'
 import logo from '../images/logo-infobeans-white.svg'
+import './style/Navbar.css'
+import {CgMenuGridR} from 'react-icons/all';
+import { IconContext } from "react-icons";
 
 function Navbar(props) {
   return (
     <>
-       <nav class="navbar fixed-top navbar-expand" style={{height:"70px"}}>
-          <div class="container">
-            <a class="navbar-brand" href="#">
-              <img
-                src={{logo}}
-                alt="logo"
-                width=""
-                height="40px"
-              />
-            </a>
-            <button
-              class="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarTogglerDemo02"
-              aria-controls="navbarTogglerDemo02"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    <div class="header">
+        <nav class="navbar fixed-top">
+            <div class="container-fluid">
+              <a class="navbar-brand text-white" href="#">
+                <img
+                  src={logo}
+                  alt=""
+                  width="128"
+                  height="40"
+                  class="d-inline-block align-text-down"
+                />
+               <span> Intranet Portal</span>
+              </a>
+              <ul class="nav justify-content-end">
                 <li class="nav-item">
-                  <span>Intranet Portal</span>
+               <a class="nav-link " aria-current="page" href="#">Home</a>
                 </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Message Board</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Tides</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Applauds</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Gallery</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Jobs</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Logout</a>
+                  </li>
+                  <li class="nav-item text-white">
+                    <IconContext.Provider value={{size:"2rem", className: "global-class-name" }}>
+            <CgMenuGridR />
+            </IconContext.Provider>
+                  </li>
               </ul>
             </div>
-          </div>
-        </nav>
+         
+          </nav>
+    </div>
+      
+    
     </>
   )
 }
