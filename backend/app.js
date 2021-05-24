@@ -4,9 +4,20 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var cors = require('cors')
+var mongoose = require('mongoose')
 
 var indexRouter = require('./routes/index');
+const { request } = require('http');
 //var usersRouter = require('./routes/users');
+
+mongoose.connect("mongodb://localhost:27017/infobeans",{
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useFindAndModify: false,
+    useCreateIndex: true
+}).then(()=>{
+    console.log("Database connected sucessfully")
+})
 
 var app = express();
 
@@ -25,9 +36,9 @@ app.use('/', indexRouter);
 //app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  next(createError(404));
-});
+// app.use(function(req, res, next) {
+//   next(createError(404));
+// });
 
 // error handler
 app.use(function(err, req, res, next) {

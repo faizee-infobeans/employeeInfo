@@ -13,7 +13,7 @@ function Navbar(props) {
   return (
     <>
     <div class="header">
-        <nav class="navbar fixed-top">
+        <nav class="navbar fixed-top  navbar-expand-md">
             <div class="container-fluid">
               <a class="navbar-brand text-white" href="#">
                 <img
@@ -25,7 +25,7 @@ function Navbar(props) {
                 />
                <span> Intranet Portal</span>
               </a>
-              <ul class="nav justify-content-end">
+              <ul class="nav justify-content-end collapse navbar-collapse" id="collapsibleNavbar">
                 <li class="nav-item">
                <a class="nav-link " aria-current="page" href="#">Home</a>
                 </li>
@@ -45,7 +45,7 @@ function Navbar(props) {
                     <a class="nav-link" href="#">Jobs</a>
                   </li>
                   <li class="nav-item" >
-                    <a class="nav-link" href="/" onClick={LogOut}>Logout</a>
+                    <a class="nav-link" href="/login" onClick={LogOut}>Logout</a>
                   </li>
                   <li class="nav-item text-white">
                     <IconContext.Provider value={{size:"2rem", className: "global-class-name" }}>

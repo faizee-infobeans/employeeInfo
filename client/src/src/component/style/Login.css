@@ -1,0 +1,25 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-image: url('../../images/login-bg.png');
+}
+
+#login-container{
+    max-width: 370px !important;
+    width: 100%;
+    padding-top: 40px;
+  margin: auto;
+}
+
+.form-label.stretch{
+    justify-content: space-between !important;
+}
+
+.forgot-link{
+    color: red;
+}
+
+.footer{
+    color: #fff;
+}

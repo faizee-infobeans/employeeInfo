@@ -1,0 +1,28 @@
+.navbar{
+    background-color: #3a3537;
+    
+}
+
+span{
+    color: #fff;
+    opacity: 0.7;
+    padding-top: 12px;
+    font-size: 18px;
+    margin-left: 15px;
+}
+
+.nav-link{
+    text-decoration: none;
+    color:grey;
+}
+.nav-link:hover{
+    color:white;
+}
+.nav-item.text-white{
+    padding: 2px 10px;
+}
+.nav-item.text-white:hover{
+background-color: #ea1b3c;
+
+
+}

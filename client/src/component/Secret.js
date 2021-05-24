@@ -78,7 +78,7 @@ return <Redirect to="/"/>
                 </ul> */}
                 {this.state.dataList.length && (
                 <OwlCarousel className='owl-theme' {...options} loop >
-                  {this.state.dataList.map((data,each)=>{
+                  {this.state.dataList.map((data)=>{
                       console.log(data);
                       return ( 
                         <div className="item text-center rounded-0">

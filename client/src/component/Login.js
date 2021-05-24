@@ -56,6 +56,7 @@ export default class Login extends Component {
     
     let errors = {};
     var email = document.getElementById("email");
+    var pass = document.getElementById("pass");
     if (!email.value) {
       errors.email = "Email is Required";
     } 
@@ -63,6 +64,10 @@ export default class Login extends Component {
       errors.email = "Invalid Email Syntax";
       email.style["border-color"] = "red";
     }
+    if (!pass.value) {
+      errors.pass = "Password is Required";
+    } 
+    
     this.setState({ errors: errors });
     const { username, password } = this.state;
     if (username === "faizee@gmail.com" && password === "Admin") {
@@ -75,6 +80,7 @@ export default class Login extends Component {
       });
     } else {
       toast.error("error in form");
+      
     }
   }
   render() {
@@ -146,12 +152,15 @@ export default class Login extends Component {
                     <input
                       type="password"
                       class="form-control"
-                      id="password"
+                      id="pass"
                       placeholder="Your password"
                       name="password"
                       value={this.state.password}
                       onChange={this.Change}
                     />
+                      <label style={{ color: "red" }} class="form-text">
+                      {this.state.errors && this.state.errors.pass}
+                      </label>
                   </div>
                   <div class="mt-4 mb-5">
                     <button
