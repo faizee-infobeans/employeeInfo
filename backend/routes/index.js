@@ -56,8 +56,8 @@ router.post("/newregister", upload, function (req, res, next) {
         port: 535,
         secure: false,
         auth: {
-          user: "faizeebano98@gmail.com",
-          pass: "Faizee@786",
+          user: "emailid",
+          pass: "password",
         },
         // tls: {
         // rejectUnauthorized: false
